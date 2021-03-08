@@ -1,0 +1,17 @@
+{
+  "name": "exentriq-gaia.node-red-contrib-mind",
+  "version": "1.0.0",
+  "description": "Exentriq MIND node",
+  "author": "Calogero Crapanzano <calosan@libero.it>",
+    "keywords": [
+        "node-red"
+    ],
+    "dependencies": {
+      "request": "2.88.0"
+    },
+    "node-red": {
+        "nodes": {
+            "mind": "mind.js"
+        }
+    }
+}

@@ -1,0 +1,52 @@
+<script type="text/javascript">
+    RED.nodes.registerType('mind',{
+        category: 'function',
+        color: '#68C99D',
+        defaults: {
+            name: {value: ''},
+            endpoint: {required: true},
+            action: {required: true},
+            flowName: {value: ''},
+            workspaceUuid: {value: ''}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "exentriq.png",
+        label: function() {
+            return this.name||"mind";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="mind">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-endpoint"><i class="icon-tag"></i> Endpoint</label>
+        <input type="text" id="node-input-endpoint" placeholder="Endpoint">
+    </div>
+    <div class="form-row">
+        <label for="node-input-action"><i class="icon-tag"></i> Action</label>
+        <select id="node-input-action">
+            <option value="echo">Echo</option>
+            <option value="status">Get Status</option>
+            <option value="query">Run Query</option>
+            <option value="training">Run Training</option>
+            <option value="prediction">Run Prediction</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-flowName"><i class="icon-tag"></i> Flow name</label>
+        <input type="text" id="node-input-flowName" placeholder="Flow name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-workspaceUuid"><i class="icon-tag"></i> Workspace UUID</label>
+        <input type="text" id="node-input-workspaceUuid" placeholder="Workspace UUID">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="mind">
+    <p>A node for interfacing with the Exentriq MIND service.</p>
+</script>
