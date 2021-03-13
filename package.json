@@ -1,5 +1,5 @@
 {
-  "name": "exentriq-gaia.node-red-contrib-mind",
+  "name": "node-red-contrib-mind",
   "version": "1.0.0",
   "description": "Exentriq MIND node",
   "author": "Calogero Crapanzano <calosan@libero.it>",
