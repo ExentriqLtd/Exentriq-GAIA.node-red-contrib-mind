@@ -9,13 +9,15 @@ module.exports = function(RED) {
             var action = config.action;
             var endpoint = config.endpoint;
             var url = '';
-            console.log(action);
-            console.log(endpoint);
 
             var opts = {};
             switch(action){
                 case 'echo':
                     opts.url = [endpoint,'mind/echo',msg.topic || 'test'].join('/');
+                    opts.method = 'GET';
+                    break;
+                case 'jobuuid':
+                    opts.url = [endpoint,'mind/jobuuid'].join('/');
                     opts.method = 'GET';
                     break;
                 case 'status':
@@ -27,18 +29,19 @@ module.exports = function(RED) {
                     opts.method = 'GET';
                     break;
                 case 'training':
-                    opts.url = [endpoint,'mind/training'].join('/');
+                    opts.url = [endpoint,'mind/message'].join('/');
                     opts.method = 'POST';
                     opts.formData = {
                         file: msg.payload,
                         fileName: msg.filename || config.filename,
                         flowName: msg.flowName || config.flowName,
-                        uuidWorkspace: msg.workspaceUuid || config.workspaceUuid
+                        uuidWorkspace: msg.workspaceUuid || config.workspaceUuid,
+                        jobUUID: msg.jobUUID,
+                        storeFile: 'N'
                     };
-
                     break;
                 case 'prediction':
-                    opts.url = [endpoint,'mind/prediction'].join('/');
+                    opts.url = [endpoint,'mind/message'].join('/');
                     opts.method = 'POST';
                     opts.formData = {
                         file: msg.payload,
@@ -51,7 +54,6 @@ module.exports = function(RED) {
                     opts.url = [endpoint,'mind/echo/default'].join('/');
                     opts.method = 'GET';
             }
-            console.log(url);
 
             opts.timeout = node.reqTimeout;
             opts.headers = {};
