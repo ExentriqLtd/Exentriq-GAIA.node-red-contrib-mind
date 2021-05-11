@@ -1,3 +1,6 @@
+1.0.4 (10/05/2021) 
+ * Bug fixing
+
 1.0.3 (10/05/2021) 
  * Update service interaction
 

@@ -47,7 +47,9 @@ module.exports = function(RED) {
                         file: msg.payload,
                         fileName: msg.filename || config.filename,
                         flowName: msg.flowName || config.flowName,
-                        uuidWorkspace: msg.workspaceUuid || config.workspaceUuid
+                        uuidWorkspace: msg.workspaceUuid || config.workspaceUuid,
+                        jobUUID: msg.jobUUID,
+                        storeFile: 'N'
                     };
                     break;
                 default:
