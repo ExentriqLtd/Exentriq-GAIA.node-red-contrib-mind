@@ -1,3 +1,6 @@
+1.0.3 (10/05/2021) 
+ * Update service interaction
+
 1.0.2 (13/03/2021) 
  * Change icon
 
