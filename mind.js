@@ -49,8 +49,10 @@ module.exports = function(RED) {
                         flowName: msg.flowName || config.flowName,
                         uuidWorkspace: msg.workspaceUuid || config.workspaceUuid,
                         jobUUID: msg.jobUUID,
-                        storeFile: 'N'
+                        storeFile: 'N',
+                        plantCode: 'ALL'
                     };
+                    console.log(opts);
                     break;
                 default:
                     opts.url = [endpoint,'mind/echo/default'].join('/');

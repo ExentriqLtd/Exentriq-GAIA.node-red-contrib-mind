@@ -1,3 +1,6 @@
+1.0.5 (12/05/2021) 
+ * Add plantCode field to prediction request
+
 1.0.4 (10/05/2021) 
  * Bug fixing
 
