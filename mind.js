@@ -50,7 +50,8 @@ module.exports = function(RED) {
                         uuidWorkspace: msg.workspaceUuid || config.workspaceUuid,
                         jobUUID: msg.jobUUID,
                         storeFile: 'N',
-                        plantCode: 'ALL'
+                        plantCode: msg.plantCode || 'ALL',
+                        months: msg.months || 12
                     };
                     console.log(opts);
                     break;
