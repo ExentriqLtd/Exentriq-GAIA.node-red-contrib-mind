@@ -37,7 +37,8 @@ module.exports = function(RED) {
                         flowName: msg.flowName || config.flowName,
                         uuidWorkspace: msg.workspaceUuid || config.workspaceUuid,
                         jobUUID: msg.jobUUID,
-                        storeFile: 'N'
+                        storeFile: 'N',
+                        percentile: msg.percentile
                     };
                     break;
                 case 'prediction':

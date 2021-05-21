@@ -1,3 +1,6 @@
+1.0.7 (21/05/2021) 
+ * Add percentile field to training request
+
 1.0.6 (14/05/2021) 
  * Add month field to prediction request
 
